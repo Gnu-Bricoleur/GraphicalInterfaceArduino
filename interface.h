@@ -7,6 +7,14 @@
 #include "couleurs.h"
 
 
+/**
+ * Ordre des parametres :
+ *  
+ * 
+ * 
+ */
+
+
 class Interface
 {
 public:
@@ -36,10 +44,7 @@ private:
   int paramsBoutons[50] = {};
   char* Boutons[50] = {"XXXXXXXXXX", "XXXXXXXXXX"};
   void (*Fonction[50])(int param) = {};
-  /*int Xmax = 903;
-  int Xmin = 205;
-  int Ymax = 957;
-  int Ymin = 201;*/
+  
   int Xmax = 885;
   int Xmin = 175;
   int Ymax = 951;
@@ -47,10 +52,6 @@ private:
   int16_t x = 1000;
   int16_t y = 1000;
   int numOngletActif = 0;
-  //std::map<int, Fonction> Fonctions;
-  //Fonctions[1] = &tranquille;
-  //void (*fctTab[50])(void) = {&tranquille, &tranquille, &tranquille};
-
-
+ 
 };
 #endif

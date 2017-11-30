@@ -75,16 +75,6 @@ void Interface::creerBouton(int debX, int debY, int finX, int finY, int onglet, 
 //Conveerti les valeurs de resistances renvoyers par l'écran par des valeur x y cohérnte avec la resolution
 void Interface::convertTactile(TSPoint p)
 {
-  // int16_t xtemp = p.x;
-  // int16_t ytemp = p.y;//ordre bizarre car ecran utilise à l'envers
-  // xtemp = xtemp - Xmax;
-  // ytemp = ytemp - Ymax;
-  // xtemp = (xtemp/float(Xmin - Xmax))*240;
-  // ytemp = (ytemp/float(Ymin - Ymax))*320;
-  // x = xtemp;
-  // y = ytemp;
-  //Serial.println(p.x);
-  //Serial.println(p.y);
   x = map(p.x, Xmin, Xmax, tft.width(), 0);
   y = map(p.y, Ymin, Ymax, tft.height(), 0);
 }
@@ -95,9 +85,6 @@ void Interface::evenement(TSPoint p, MCUFRIEND_kbv ecran)
   if (p.z > MINPRESSURE && p.z < MAXPRESSURE)
   {
     this->convertTactile(p);
-    // Serial.println("Coord");
-   //Serial.println(x);
-   //Serial.println(y);
     //Check onglet
     for (int i = 0; i < nombreOnglets; i += 1)
     {
@@ -174,9 +161,6 @@ void Interface::maj(MCUFRIEND_kbv ecran)
         }
       }
     }
-
-
-
     changement = false;
   }
 }
